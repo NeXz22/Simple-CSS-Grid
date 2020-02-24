@@ -1,0 +1,96 @@
+$container-max-width: 1200px;
+$container-min-width: 0;
+$row-margin-top-down: 0.5rem;
+$row-margin-left-right: 1%;
+$width: 100% - ($row-margin-left-right * 2);
+$row-breakpoint: 768px;
+$col-min-height: 2rem;
+
+[class*='container'],
+[class*='col-'],
+[class*='row'],
+.container:after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.container {
+	width: 100%;
+	max-width: $container-max-width;
+	min-width: $container-min-width;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.row {
+    position: relative;
+    width: 100%;
+}
+
+.row [class*="col"] {
+    float: left;
+    margin: $row-margin-top-down $row-margin-left-right;
+    min-height: $col-min-height; // ?
+}
+
+.container:after,
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.col-1,
+.col-2,
+.col-3,
+.col-4,
+.col-5,
+.col-6,
+.col-7,
+.col-8,
+.col-9,
+.col-10,
+.col-11,
+.col-12 {
+    width: $width;
+}
+
+@media only screen and (min-width: $row-breakpoint) {
+    .col-1 {
+        width: ($width / (12 / 1)) - ( ($row-margin-left-right * 2) * (11 / 12) );
+    }
+    .col-2 {
+        width: ($width / (12 / 2)) - ( ($row-margin-left-right * 2) * (10 / 12) );
+    }
+    .col-3 {
+        width: ($width / (12 / 3)) - ( ($row-margin-left-right * 2) * (9 / 12) );
+    }
+    .col-4 {
+        width: ($width / (12 / 4)) - ( ($row-margin-left-right * 2) * (8 / 12) );
+    }
+    .col-5 {
+        width: ($width / (12 / 5)) - ( ($row-margin-left-right * 2) * (7 / 12) );
+    }
+    .col-6 {
+        width: ($width / (12 / 6)) - ( ($row-margin-left-right * 2) * (6 / 12) );
+    }
+    .col-7 {
+        width: ($width / (12 / 7)) - ( ($row-margin-left-right * 2) * (5 / 12) );
+    }
+    .col-8 {
+        width: ($width / (12 / 8)) - ( ($row-margin-left-right * 2) * (4 / 12) );
+    }
+    .col-9 {
+        width: ($width / (12 / 9)) - ( ($row-margin-left-right * 2) * (3 / 12) );
+    }
+    .col-10 {
+        width: ($width / (12 / 10)) - ( ($row-margin-left-right * 2) * (2 / 12) );
+    }
+    .col-11 {
+        width: ($width / (12 / 11)) - ( ($row-margin-left-right * 2) * (1 / 12) );
+    }
+    .col-12 {
+        width: ($width / (12 / 12)) - ( ($row-margin-left-right * 2) * (0 / 12) );
+    }
+}
